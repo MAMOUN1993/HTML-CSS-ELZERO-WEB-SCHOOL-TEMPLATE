@@ -1614,4 +1614,6 @@ footer .image {
     }
     
 }
-
+.time_seconds{
+    transition-duration: var(--animtiontime);
+}
