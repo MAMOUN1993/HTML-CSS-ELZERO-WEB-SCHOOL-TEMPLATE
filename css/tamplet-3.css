@@ -357,6 +357,10 @@ header .container .nav .mega-menu .mine-menu ul li i{
     left: 50%;
     transform: translateX(-50%);
     bottom: 5%;
+    animation-duration: 1.5s;
+    animation-name: go-down;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     
 }
 .landing .go-down i {
@@ -1239,8 +1243,8 @@ header .container .nav .mega-menu .mine-menu ul li i{
     border:1px solid var(--backcolur);
 }
 .video .box-1 {
-   border: 1px solid rgba(0, 0, 0 , 0.3);
-   min-width: 300px;
+    border: 1px solid rgba(0, 0, 0 , 0.3);
+    min-width: 300px;
 }
 .video .box-1 ul li {
     cursor: pointer;
