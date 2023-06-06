@@ -121,5 +121,68 @@ function editspan(){
     }
 }
 }
-
+let i = 0 ;
+let j = 0 ;
+let vewpar = "";
+let par = document.getElementsByClassName("writer_pargh")[0];
+let saveVal = par.textContent;
+let verPar = saveVal.split("");
+par.textContent= "";
+function writer (){
+    if(verPar[i]=== ' ' & j < 2){
+        j++;
+    }else{
+        vewpar = `${vewpar}${verPar[i]}`;
+        par.textContent = `${vewpar}|`
+        i++;
+        j=0;
+    };
+    if(i >= verPar.length){
+        par.textContent = `${vewpar}`
+        clearInterval(conter)
+    };
+};
+let writerVal =document.getElementsByClassName('writer_value')[0];
+let submitVal =document.getElementsByClassName('writer_submit')[0];
+let conter = setInterval (writer,100);
+submitVal.onclick = function (){
+    clearInterval(conter)
+    if(writerVal.value == ""){
+        i=0;
+    j=0;
+    vewpar = "";
+    verPar = saveVal.split("");
+    par.textContent= "";
+    conter = setInterval (writer,100);
+    }else{
+        i=0;
+        j=0;
+        vewpar = "";
+        saveVal= writerVal.value;
+        verPar = saveVal.split("");
+        par.textContent= "";
+        conter = setInterval (writer,100);
+    }
+};
+var slider = document.getElementsByClassName("slider")[0];
+var image = document.getElementsByClassName("index_po");
+var calc= (slider.scrollHeight/238).toFixed(0) ;
+var sett = (slider.scrollTop/calc).toFixed(0);
+console.log(slider);
+image[0].style.display = "block";
+for ( let i = 1 ; i < image.length ; i++ ){
+    image[i].style.display = "none";
+}
+slider.onscroll = function scroll (){
+    sett = (slider.scrollTop/calc).toFixed(0);
+    for ( let i = 0 ; i < image.length ; i++ ){
+        if(sett == i){
+            image[i].style.display = "block";
+        };
+        if(sett != i){
+            image[i].style.display = "none";
+        }
+    }
+    console.log(image.length)
+}
 
